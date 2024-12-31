@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     HeroesRoutingModule
   ]
 })

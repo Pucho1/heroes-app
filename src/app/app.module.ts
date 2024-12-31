@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthModule,
     SharedModule
   ],
   providers: [
