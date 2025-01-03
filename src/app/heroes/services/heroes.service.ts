@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Hero } from '../interfaces/interfaces.hero';
-import { environment } from '../../envairoments/enviroments';
 import { catchError, map, Observable, of } from 'rxjs';
+import { environment } from '../../../envairoments/enviroments';
+import { Hero } from '../interfaces/interfaces.hero';
 
 @Injectable({providedIn: 'root'})
 export class HeroesService {
