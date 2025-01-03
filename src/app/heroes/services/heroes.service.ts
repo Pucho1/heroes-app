@@ -18,4 +18,15 @@ export class HeroesService {
       }),
       catchError((err) => of([])));
   };
+
+
+
+  getHeroeDetails(id: string): Observable<Hero|undefined> {
+    return this.http.get<Hero>(`${this.baseURL}/heroes/${id}`).pipe(
+      map((resp) => {
+        return resp;
+      }),
+      catchError( err => of(undefined)));
+  };
+
 };

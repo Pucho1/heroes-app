@@ -7,6 +7,7 @@ import { MaterialModule } from '../material/material.module';
 import { ListPageComponent } from './pages/list-page/list-page.component';
 import { HeroCardComponent } from './components/card-heroe.component';
 import { HeroesImagesPipe } from './pipes/heroes-images.pipe';
+import { HeroPageComponent } from './pages/hero-page/hero-page.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { HeroesImagesPipe } from './pipes/heroes-images.pipe';
     LayoutPageComponent,
     ListPageComponent,
     HeroCardComponent,
+    HeroPageComponent,
 
     //Pipes
     HeroesImagesPipe
