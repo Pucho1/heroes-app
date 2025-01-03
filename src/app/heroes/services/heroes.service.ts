@@ -29,4 +29,18 @@ export class HeroesService {
       catchError( err => of(undefined)));
   };
 
+
+  searchHeroes(query: string ): Observable<Hero[]> {
+    return this.http.get<Hero[]>(`${this.baseURL}/heroes`,
+    {params: {
+      q: query,
+      _limit: '6'
+    }}
+    ).pipe(
+      map((resp) => {
+        return resp;
+      }),
+      catchError( err => of([])));
+  };
+
 };
