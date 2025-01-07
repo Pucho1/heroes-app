@@ -10,6 +10,7 @@ import { HeroCardComponent } from './components/card-heroe.component';
 import { HeroesImagesPipe } from './pipes/heroes-images.pipe';
 import { HeroPageComponent } from './pages/hero-page/hero-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { NewPageComponent } from './pages/new-page/new-page.component';
 
 
 
@@ -20,6 +21,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
     HeroCardComponent,
     HeroPageComponent,
     SearchPageComponent,
+    NewPageComponent,
 
     //Pipes
     HeroesImagesPipe
