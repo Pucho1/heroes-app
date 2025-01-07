@@ -11,12 +11,18 @@ export class HeroesService {
 
   private baseURL = environment.baseUrl;
 
+/**
+ * Obtengo todos los heroes disponibles.
+ * @returns Listado de heroes o un arry vacio si hubiese un error.
+ */
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(`${this.baseURL}/heroes`).pipe(
       map((resp) => {
         return resp;
       }),
-      catchError((err) => of([])));
+      catchError(
+        () => of([])
+      ));
   };
 
 
@@ -26,7 +32,9 @@ export class HeroesService {
       map((resp) => {
         return resp;
       }),
-      catchError( err => of(undefined)));
+      catchError(
+        err => of(undefined)
+      ));
   };
 
 
@@ -40,7 +48,55 @@ export class HeroesService {
       map((resp) => {
         return resp;
       }),
-      catchError( err => of([])));
+      catchError(
+        err => of([])
+      ));
   };
 
+
+  /**
+   * Agrego un heroe.
+   * @returns Heroe o un arry vacio si hubiese un error.
+   */
+  addHeroes(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(`${this.baseURL}/heroes`, hero).pipe(
+      map((resp) => {
+        return resp;
+      }),
+      catchError(
+        () => of()
+      )
+    );
+  };
+
+  /**
+   * Actualizo un heroe.
+   * @returns Heroe con los datos actualizado.
+   */
+  updateHeroes(hero: Hero): Observable<Hero> {
+
+    if (!hero.id) { throw new Error('El id del heroe es requerido'); }
+
+    return this.http.patch<Hero>(`${this.baseURL}/heroes/${hero.id}`, hero).pipe(
+      map((resp) => {
+        return resp;
+      }),
+      catchError(
+        () => of()
+      )
+    );
+  };
+
+
+  /**
+   * Elimina un heroe.
+   * @returns Boleano en funcion del resultado de la operacion.
+   */
+  deleteHeroes(id: string): Observable<boolean> {
+
+    return this.http.delete<boolean>(`${this.baseURL}/heroes/${id}`).pipe(
+      catchError((resp) => of(false)),
+      map((resp) => true),
+    )
+  };
 };
