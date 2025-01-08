@@ -11,6 +11,7 @@ import { HeroesImagesPipe } from './pipes/heroes-images.pipe';
 import { HeroPageComponent } from './pages/hero-page/hero-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { NewPageComponent } from './pages/new-page/new-page.component';
+import { ConfirmDialogComponent } from './components/confirmDialog/confirmDialog.component';
 
 
 
@@ -22,6 +23,7 @@ import { NewPageComponent } from './pages/new-page/new-page.component';
     HeroPageComponent,
     SearchPageComponent,
     NewPageComponent,
+    ConfirmDialogComponent,
 
     //Pipes
     HeroesImagesPipe

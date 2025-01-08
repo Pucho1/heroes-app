@@ -73,7 +73,7 @@ export class HeroesService {
    * Actualizo un heroe.
    * @returns Heroe con los datos actualizado.
    */
-  updateHeroes(hero: Hero): Observable<Hero> {
+  updateHeroe(hero: Hero): Observable<Hero> {
 
     if (!hero.id) { throw new Error('El id del heroe es requerido'); }
 
@@ -92,7 +92,7 @@ export class HeroesService {
    * Elimina un heroe.
    * @returns Boleano en funcion del resultado de la operacion.
    */
-  deleteHeroes(id: string): Observable<boolean> {
+  deleteHeroe(id: string): Observable<boolean> {
 
     return this.http.delete<boolean>(`${this.baseURL}/heroes/${id}`).pipe(
       catchError((resp) => of(false)),

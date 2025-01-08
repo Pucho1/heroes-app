@@ -1,7 +1,6 @@
 <h1>
-  Editar / Agregar
-  Heroe
-  <small>Superman</small>
+  {{ currentHero.id ? 'Editar Heroe' : 'Agregar Heroe' }}
+  <small *ngIf="currentHero.id">{{currentHero.superhero}}</small>
 </h1>
 
 <mat-divider class="mb-2"></mat-divider>
@@ -28,7 +27,7 @@
             <mat-label>Alter ego</mat-label>
             <input
               matInput
-              formControlName="alterEgo"
+              formControlName="alter_ego"
               type="text"
             />
           </mat-form-field>
@@ -38,7 +37,7 @@
             <input
               matInput
               type="text"
-              formControlName="firstAppearance"
+              formControlName="first_appearance"
               required
             />
           </mat-form-field>
@@ -80,6 +79,16 @@
         <div class="flex justify-content-between">
 
           <button
+            mat-flat-button color="warn"
+            *ngIf="currentHero.id"
+            (click)="deleteHero()"
+          >
+            Borrar
+          </button>
+
+          <span></span>
+
+          <button
             mat-flat-button color="primary"
             (click)="saveHero()"
           >
@@ -87,9 +96,6 @@
             Guardar
           </button>
 
-          <button mat-flat-button color="warn">
-            Cancelar
-          </button>
         </div>
 
       </mat-card-content>
