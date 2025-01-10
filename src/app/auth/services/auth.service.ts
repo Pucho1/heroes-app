@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { map, Observable, of, tap } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 
 import { User } from '../interfaces/user.interfaces';
 import { environment } from '../../../envairoments/enviroments';
@@ -34,6 +34,11 @@ export class AuthService {
     localStorage.clear();
   };
 
+  /**
+   * Comprueba si tengo algun usuario auteticdo revisando el localStore
+   * Si hubieran un token almacenado se vuelve a pedir los datos al back
+   * @returns true o false
+   */
   checkLoginValidity(): Observable<boolean> {
 
     if( !localStorage.getItem('token') ) { return of(false) };
@@ -41,12 +46,11 @@ export class AuthService {
     const token = localStorage.getItem('token');
 
     return this.http.get<User>(`${this.baseUrl}/users/1`).pipe(
-      tap( (dataUser: User) =>  this._user = dataUser),
-      map( (dataUser: User) =>  !!dataUser )
-    )
-
-
-  }
+      tap( (dataUser: User) => this._user = dataUser  ),
+      map( (dataUser: User) =>  !!dataUser ),
+      catchError( error => of(false))
+    );
+  };
 
   get user(): User|undefined {
     if( !this._user ) return undefined;

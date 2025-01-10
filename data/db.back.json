@@ -1,8 +1,8 @@
 {
   "users": [
     {
-      "id": "1",
-      "user": "John Doe",
+      "id": 1,
+      "usuario": "John Doe",
       "email": "john.due@gmail.com"
     }
   ],
@@ -13,8 +13,7 @@
       "publisher": "DC Comics",
       "alter_ego": "Bruce Wayne",
       "first_appearance": "Detective Comics #27",
-      "characters": "Bruce Wayne",
-      "alt_img": "https://imgcdn.stablediffusionweb.com/2024/9/23/4eca26b4-be63-45da-82c9-5fd43b926bdf.jpg"
+      "characters": "Bruce Wayne"
     },
     {
       "id": "dc-superman",
@@ -23,6 +22,38 @@
       "alter_ego": "Kal-El",
       "first_appearance": "Action Comics #1",
       "characters": "Kal-El"
+    },
+    {
+      "id": "dc-flash",
+      "superhero": "Flash",
+      "publisher": "DC Comics",
+      "alter_ego": "Jay Garrick",
+      "first_appearance": "Flash Comics #1",
+      "characters": "Jay Garrick, Barry Allen, Wally West, Bart Allen"
+    },
+    {
+      "id": "dc-green",
+      "superhero": "Green Lantern",
+      "publisher": "DC Comics",
+      "alter_ego": "Alan Scott",
+      "first_appearance": "All-American Comics #16",
+      "characters": "Alan Scott, Hal Jordan, Guy Gardner, John Stewart, Kyle Raynor, Jade, Sinestro, Simon Baz"
+    },
+    {
+      "id": "dc-arrow",
+      "superhero": "Green Arrow",
+      "publisher": "DC Comics",
+      "alter_ego": "Oliver Queen",
+      "first_appearance": "More Fun Comics #73",
+      "characters": "Oliver Queen"
+    },
+    {
+      "id": "dc-wonder",
+      "superhero": "Wonder Woman",
+      "publisher": "DC Comics",
+      "alter_ego": "Princess Diana",
+      "first_appearance": "All Star Comics #8",
+      "characters": "Princess Diana"
     },
     {
       "id": "dc-martian",
@@ -135,25 +166,6 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
-    },
-    {
-      "id": "marvel-cyclops",
-      "superhero": "Cyclops",
-      "publisher": "Marvel Comics",
-      "alter_ego": "Scott Summers",
-      "first_appearance": "X-Men #1",
-      "characters": "Scott Summers"
-    },
-    {
-      "id": "miguel-hero",
-      "alterEgo": "BLack Thunder",
-      "superhero": "Miguel",
-      "characters": "Miguel",
-      "firstAppearance": "2022",
-      "publisher": "Marvel Comics",
-      "alt_img": "https://lumenor.ai/cdn-cgi/imagedelivery/F5KOmplEz0rStV2qDKhYag/123b0af7-f0fd-43a0-3f25-f04b47bbdd00/tn",
-      "alter_ego": "the programer ",
-      "first_appearance": "Markas.com"
     }
   ]
 }
